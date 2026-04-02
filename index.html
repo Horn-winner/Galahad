@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALAHAD | Intelligence & Autonomous Execution</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #001a33; --accent: #c5a059; --text: #f0f0f0; --dark: #050505; --glass: rgba(255, 255, 255, 0.03);
+        }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--dark); color: var(--text); overflow-x: hidden; }
+        
+        /* Animación de entrada */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        section { animation: fadeIn 1s ease-out; }
+
+        header { padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(197, 160, 89, 0.1); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; background: rgba(5,5,5,0.8); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 5px; color: var(--accent); text-decoration: none; }
+
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; background: radial-gradient(circle at 50% 50%, #002147 0%, #050505 100%); }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1rem; font-style: italic; }
+        .subtitle { font-size: 1.1rem; max-width: 800px; margin-bottom: 3rem; opacity: 0.7; font-weight: 300; }
+
+        .btn-gold { background: linear-gradient(135deg, #c5a059 0%, #9e7e43 100%); color: #000; padding: 1.2rem 3rem; text-decoration: none; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; transition: 0.4s; display: inline-block; border: none; cursor: pointer; }
+        .btn-gold:hover { transform: scale(1.05); box-shadow: 0 15px 40px rgba(197, 160, 89, 0.4); }
+
+        /* Stats Section */
+        .stats { display: flex; justify-content: center; gap: 4rem; padding: 4rem; background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(197,160,89,0.1); flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-value { color: var(--accent); font-family: 'Playfair Display', serif; font-size: 2.5rem; display: block; }
+        .stat-label { font-size: 0.7rem; letter-spacing: 2px; opacity: 0.6; text-transform: uppercase; }
+
+        /* Thesis Section */
+        .thesis { padding: 8rem 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .thesis-content h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--accent); }
+        .thesis-image { border: 1px solid var(--accent); padding: 1rem; background: var(--glass); position: relative; }
+        .mock-chart { height: 200px; width: 100%; border-bottom: 1px solid var(--accent); border-left: 1px solid var(--accent); position: relative; overflow: hidden; }
+        .chart-line { position: absolute; bottom: 20%; left: 0; width: 100%; height: 2px; background: var(--accent); transform: rotate(-5deg); box-shadow: 0 0 10px var(--accent); }
+
+        /* Console */
+        .console-wrap { padding: 4rem 10%; background: #000; }
+        .console { font-family: 'Courier New', monospace; font-size: 0.85rem; color: #00ff88; padding: 2rem; border: 1px solid #1a1a1a; position: relative; height: 300px; overflow-y: hidden; }
+        .line { margin-bottom: 0.4rem; }
+
+        /* FAQ */
+        .faq { padding: 6rem 10%; }
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .faq-item h4 { color: var(--accent); margin-bottom: 0.5rem; }
+        .faq-item p { opacity: 0.7; font-size: 0.9rem; }
+
+        /* Footer */
+        footer { padding: 4rem; text-align: center; border-top: 1px solid rgba(197,160,89,0.1); opacity: 0.4; font-size: 0.7rem; letter-spacing: 3px; }
+
+        @media (max-width: 900px) { .thesis { grid-template-columns: 1fr; } .stats { gap: 2rem; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">GALAHAD</a>
+        <div style="font-size: 0.7rem; opacity: 0.6; letter-spacing: 2px;">V.2.0 CORE INTELLIGENCE</div>
+    </header>
+
+    <section class="hero">
+        <div style="color: var(--accent); margin-bottom: 1.5rem; font-size: 0.8rem; letter-spacing: 5px;">AGENTE AUTÓNOMO DE CAPITAL</div>
+        <h1>El Futuro no se predice. Se ejecuta.</h1>
+        <p class="subtitle">Galahad es el primer mandato de gestión discrecional por IA. Indexación global dinámica basada en el análisis de sentimiento masivo en tiempo real.</p>
+        <a href="#firma" class="btn-gold">Protocolo de Firma</a>
+    </section>
+
+    <div class="stats">
+        <div class="stat-item"><span class="stat-value">24/7</span><span class="stat-label">Vigilancia</span></div>
+        <div class="stat-item"><span class="stat-value">< 1ms</span><span class="stat-label">Latencia Ejecución</span></div>
+        <div class="stat-item"><span class="stat-value">100%</span><span class="stat-label">Autónomo</span></div>
+        <div class="stat-item"><span class="stat-value">Global</span><span class="stat-label">Alcance Mercados</span></div>
+    </div>
+
+    <section class="thesis">
+        <div class="thesis-content">
+            <h2>S&P 500 Global e Inteligente.</h2>
+            <p>A diferencia de los fondos pasivos tradicionales, Galahad rebalancea su exposición cada segundo basándose en el flujo de información macro y noticias geopolíticas. No seguimos al mercado; nos movemos antes que él.</p>
+            <p style="opacity: 0.6;">Nuestra arquitectura protege su patrimonio ante eventos de "Cisne Negro" mediante el análisis de sentimiento NLP (Natural Language Processing).</p>
+        </div>
+        <div class="thesis-image">
+            <div class="mock-chart">
+                <div class="chart-line"></div>
+                <div style="position:absolute; top:10px; right:10px; font-size:0.6rem; color:var(--accent);">GALAHAD PERFORMANCE (SIM)</div>
+            </div>
+            <p style="font-size: 0.7rem; margin-top: 1rem; text-align: center; opacity: 0.5;">OPTIMIZACIÓN DINÁMICA DE CARTERA VS. INDEXACIÓN PASIVA</p>
+        </div>
+    </section>
+
+    <section class="console-wrap">
+        <div class="console" id="console">
+            <div class="line" style="color:var(--accent)">[SISTEMA OPERATIVO GALAHAD INICIALIZADO...]</div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 3rem; text-align: center;">Consultas de Élite</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4>¿Por qué ejecución autónoma?</h4>
+                <p>La velocidad de la información hoy supera la capacidad de reacción humana. Galahad elimina el sesgo emocional y la demora técnica.</p>
+            </div>
+            <div class="faq-item">
+                <h4>¿Es seguro el mandato?</h4>
+                <p>Usted firma un mandato de gestión técnica. El control legal de los fondos permanece bajo los términos de custodia del broker conectado.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="firma" style="padding: 10rem 10%; background: #001a33; text-align: center;">
+        <div style="max-width: 600px; margin: 0 auto; border: 1px solid var(--accent); padding: 4rem; background: rgba(0,0,0,0.3);">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem;">Únete al Círculo.</h2>
+            <p style="margin-bottom: 3rem; opacity: 0.7;">Reserva una de las plazas de Socio Fundador y obtén acceso vitalicio a la inteligencia Galahad.</p>
+            <form action="https://formspree.io/f/tu-id-aqui" method="POST">
+                <input type="text" name="name" placeholder="NOMBRE COMPLETO" style="width: 100%; padding: 1rem; margin-bottom: 1rem; background: rgba(255,255,255,0.05); border: 1px solid #444; color: #fff;" required>
+                <input type="email" name="email" placeholder="EMAIL PROFESIONAL" style="width: 100%; padding: 1rem; margin-bottom: 2rem; background: rgba(255,255,255,0.05); border: 1px solid #444; color: #fff;" required>
+                <button type="submit" class="btn-gold" style="width: 100%;">Firmar y Reservar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        GALAHAD INTELLIGENCE © 2026 | LONDRES • NUEVA YORK • MADRID
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const consoleDiv = document.getElementById('console');
+        const messages = [
+            "Escaneando Reuters y Bloomberg en tiempo real...",
+            "Analizando volatilidad del crudo Brent...",
+            "Sentimiento alcista detectado en mercados emergentes.",
+            "Rebalanceo de pesos en el S&P 500 Global completado.",
+            "Ajustando stop-loss dinámico por noticia macroeconómica.",
+            "Galahad Core operando en parámetros de riesgo óptimos."
+        ];
+        setInterval(() => {
+            const line = document.createElement('div');
+            line.className = 'line';
+            line.innerHTML = `<span style="color:#555">[${new Date().toLocaleTimeString()}]</span> ${messages[Math.floor(Math.random() * messages.length)]}`;
+            consoleDiv.appendChild(line);
+            if(consoleDiv.children.length > 10) consoleDiv.removeChild(consoleDiv.children[1]);
+        }, 3000);
+    </script>
+</body>
+</html>
