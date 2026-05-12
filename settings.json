@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+    },
+    "cmake.generator": "MinGW Makefiles",
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "clang.cxxflags": "-I${workspaceFolder}/include", // header files
+    "cmake.configureSettings": {
+        "CMAKE_MAKE_PROGRAM": "/a/msys64/mingw64/bin/mingw32-make.exe",  // Ruta a make.exe
+        "CMAKE_C_COMPILER": "/a/msys64/mingw64/bin/gcc.exe",    // Ruta a gcc.exe
+        "CMAKE_CXX_COMPILER": "/a/msys64/mingw64/bin/g++.exe"   // Ruta a g++.exe
+    },
+    "cmake.parallelJobs": 0,
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4, NamespaceIndentation: All, FixNamespaceComments: false }",
+    "editor": {
+        "completitionProvider": "default",
+        "suggestionProvider": "default"
+    }
+}

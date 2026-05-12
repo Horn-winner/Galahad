@@ -1,0 +1,3 @@
+C:/Users/mdpoj/Desktop/Inversiones/build/CMakeFiles/Inversiones.dir
+C:/Users/mdpoj/Desktop/Inversiones/build/CMakeFiles/edit_cache.dir
+C:/Users/mdpoj/Desktop/Inversiones/build/CMakeFiles/rebuild_cache.dir
