@@ -1,0 +1,38 @@
+{
+    "configurations": [
+         {  "name": "(gdb) MSYS2 Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Inversiones.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,  // true si quieres consola externa
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe", // Ajusta la ruta según tu instalación
+            "setupCommands": [
+                { "text": "-enable-pretty-printing", "ignoreFailures": true },
+                { "text": "-gdb-set disassembly-flavor intel", "ignoreFailures": true }
+            ]
+        },
+        
+        // Opción 2: Usando PowerShell/CMD (con MinGW-w64 GDB)
+        {   "name": "(gdb) PowerShell Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Inversiones.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb.exe", // Asegúrate de que GDB esté en el PATH
+            "setupCommands": [
+                { "text": "-enable-pretty-printing", "ignoreFailures": true },
+                { "text": "-gdb-set disassembly-flavor intel", "ignoreFailures": true } 
+            ]
+        }
+    ]
+}
