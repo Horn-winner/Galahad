@@ -1,0 +1,78 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "clean-build-folder",
+            "type": "shell",
+            "windows": {
+                "command": "if (Test-Path build) { Remove-Item -Recurse -Force build }"
+            },
+            "group": "build",
+            "detail": "Eliminar carpeta build",
+            "options": {
+                "shell": {
+                    "executable": "powershell.exe"
+                }
+            }
+        },
+        {
+            "label": "configure",
+            "type": "shell",
+            "windows": {
+                "command": "&",
+                "args": [
+                    "'cmake.exe'",
+                    "-S", "${workspaceFolder}",
+                    "-B", "${workspaceFolder}/build",
+                    "-G", "MinGW Makefiles",
+                    "-DCMAKE_BUILD_TYPE=Debug",
+                    "-DCMAKE_C_COMPILER=C:/msys64/mingw64/bin/gcc.exe",
+                    "-DCMAKE_CXX_COMPILER=C:/msys64/mingw64/bin/g++.exe",
+                    "-DCMAKE_MAKE_PROGRAM=C:/msys64/mingw64/bin/mingw32-make.exe",
+                    "-DCMAKE_CXX_FLAGS=-std=c++17"
+                ]
+            },
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "detail": "Generar proyecto CMake con MinGW",
+            "dependsOn": ["clean-build-folder"],
+            "options": {
+                "shell": {
+                    "executable": "powershell.exe"
+                }
+            }
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "windows": {
+                "command": "&",
+                "args": [
+                    "'cmake.exe'",
+                    "--build", "${workspaceFolder}/build",
+                    "--config", "Debug",
+                    "--parallel", "4"// ,"--verbose"
+                ]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compilar el proyecto",
+            "dependsOn": ["configure"],
+            "options": {
+                "shell": {
+                    "executable": "powershell.exe"
+                }
+            }
+        },
+        {
+            "label": "rebuild",
+            "type": "shell",
+            "group": "build",
+            "detail": "Limpiar cache y recompilar todo",
+            "dependsOn": ["build"]
+        }
+    ]
+}
